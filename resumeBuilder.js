@@ -43,7 +43,7 @@ var work = {
 var education = {
 	"schools": [{
 		"name": "Palo Alto University",
-		"location": "Palo Alto",
+		"location": "Palo Alto, CA",
 		"degree": "Masters",
 		"major": "Psychology",
 		"dates": "2012-2014"
@@ -53,15 +53,14 @@ var education = {
 		"degree": "BA",
 		"major": "Psychology",
 		"dates": "2008-2012"
-	}, {
+	}],
 		"onlineCourses": [{
 			"title": "Front-End-Developer Nanodegree",
 			"school": "Udacity",
 			"dates": "2016",
 			"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 		}]
-	}]
-};
+	};
 var projects = {
   "project":[{
     "title": "Resume-Website",
@@ -181,18 +180,25 @@ education.display = function() {
       var formattedEduMajor = HTMLschoolMajor.replace('%data%', schools.major);
       $(".education-entry:last").append(formattedEduMajor);
 
-
     })
-      for (var i = 0; i < education.onlineCourses.length; i++) {
       $('#education').append(HTMLonlineClasses);
+      for (var i = 0; i < education.onlineCourses.length; i++) {
 
       var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
       var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-      var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].date);
+      var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
       var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
 
       var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates;
       $('.education-entry:last').append(formattedOnlineTitleSchool);
+      $('.education-entry:last').append(formattedOnlineDates);
+      $('.education-entry:last').append(formattedOnlineURL);
+
     }
+
+
+
   };
 education.display();
+
+  $('#mapDiv').append(googleMap);
