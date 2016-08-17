@@ -183,7 +183,7 @@ education.display = function() {
     })
       $('#education').append(HTMLonlineClasses);
       for (var i = 0; i < education.onlineCourses.length; i++) {
-
+        $('#education').append(HTMLschoolStart);
       var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
       var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
       var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
@@ -191,13 +191,9 @@ education.display = function() {
 
       var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates;
       $('.education-entry:last').append(formattedOnlineTitleSchool);
-      $('.education-entry:last').append(formattedOnlineDates);
       $('.education-entry:last').append(formattedOnlineURL);
 
     }
-
-
-
   };
 education.display();
 
