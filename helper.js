@@ -127,7 +127,7 @@ function initializeMap() {
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    work.jobs.forEach(function(job){
+    work.job.forEach(function(job){
       locations.push(job.location);
     });
 
@@ -230,5 +230,5 @@ window.addEventListener('load', initializeMap);
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
-  map.fitBounds(mapBounds);
+map.fitBounds(mapBounds);
 });
