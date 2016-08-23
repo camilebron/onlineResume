@@ -1,18 +1,18 @@
 var bio = {
-	"bio": [{
-		"name": "Camille Lebrón Brayfield",
-		"role": "Front-End-Developer",
-		"contact": [{
-			"mobile": "787-464-4142",
-			"email": "camilebron@gmail.com",
-			"github": "camilebron",
-			"location": "Puerto Rico",
-			"twitter": "camileb28"
-		}],
-		"welcomeMessage": "Welcome to my resume! Let's create great things together...",
-		"biopic": "images/bioPic.jpg"
-	  }],
-	"skills": ["HTML5", "CSS", "JS"]
+    "bio": [{
+        "name": "Camille Lebrón Brayfield",
+        "role": "Front-End-Developer",
+        "contact": [{
+            "mobile": "787-464-4142",
+            "email": "camilebron@gmail.com",
+            "github": "camilebron",
+            "location": "Puerto Rico",
+            "twitter": "camileb28"
+        }],
+        "welcomeMessage": "Welcome to my resume! Let's create great things together...",
+        "biopic": "images/bioPic.jpg"
+    }],
+    "skills": ["HTML5", "CSS", "JS"]
 }
 
 var work = {
@@ -32,8 +32,7 @@ var work = {
 };
 
 var education = {
-    "schools": [
-      {
+    "schools": [{
         "name": "Palo Alto University",
         "location": "Palo Alto, CA",
         "degree": "Masters",
@@ -67,38 +66,33 @@ var projects = {
     }]
 };
 bio.display = function() {
-  bio.bio.forEach(function(bio) {
-      var formattedName = HTMLheaderName.replace("%data%", bio.name);
-      var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-      $("#header").prepend(formattedRole);
-      $("#header").prepend(formattedName);
-      var formattedMobile = HTMLmobile.replace('%data%', bio.contact[0].mobile);
-      $('#topContacts').append(formattedMobile);
-      var formattedEmail = HTMLemail.replace("%data%", bio.contact[0].email);
-      $('#topContacts').append(formattedEmail);
-      var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact[0].twitter);
-      $('#topContacts').append(formattedTwitter);
-      var formattedGithub = HTMLgithub.replace("%data%", bio.contact[0].github);
-      $('#topContacts').append(formattedGithub);
-      var formattedLocation = HTMLlocation.replace("%data%", bio.contact[0].location);
-      $('#topContacts').append(formattedLocation);
-      var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-      $('#header').append(formattedBioPic);
-      var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-      $('#header').append(formattedWelcomeMsg);
-      $('#footerContacts').append(formattedMobile,formattedEmail,formattedTwitter,formattedGithub,formattedLocation);
+    bio.bio.forEach(function(bio) {
+        var formattedName = HTMLheaderName.replace("%data%", bio.name);
+        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+        $("#header").prepend(formattedRole);
+        $("#header").prepend(formattedName);
+        var formattedMobile = HTMLmobile.replace('%data%', bio.contact[0].mobile);
+        $('#topContacts').append(formattedMobile);
+        var formattedEmail = HTMLemail.replace("%data%", bio.contact[0].email);
+        $('#topContacts').append(formattedEmail);
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact[0].twitter);
+        $('#topContacts').append(formattedTwitter);
+        var formattedGithub = HTMLgithub.replace("%data%", bio.contact[0].github);
+        $('#topContacts').append(formattedGithub);
+        var formattedLocation = HTMLlocation.replace("%data%", bio.contact[0].location);
+        $('#topContacts').append(formattedLocation);
+        var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+        $('#header').append(formattedBioPic);
+        var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+        $('#header').append(formattedWelcomeMsg);
+        $('#footerContacts').append(formattedMobile, formattedEmail, formattedTwitter, formattedGithub, formattedLocation);
     });
     $("#header").append(HTMLskillsStart);
-    if (bio.skills.length > 0) {
-    //for (var i = 0; i < bio.skills.length; i++) {
-        var formattedSkills = HTMLskills.replace("%data%",bio.skills[0]);
+    //  if (bio.skills.length > 0) {
+    for (var i = 0; i < bio.skills.length; i++) {
+        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
         $("#skills").append(formattedSkills);
-        var formattedSkills = HTMLskills.replace("%data%",bio.skills[1]);
-        $("#skills").append(formattedSkills);
-        var formattedSkills = HTMLskills.replace("%data%",bio.skills[2]);
-        $("#skills").append(formattedSkills);
-
-      }
+    }
 
 }
 
