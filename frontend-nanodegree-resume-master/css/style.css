@@ -105,7 +105,8 @@ a {
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #494d52;
+  color: orange;
 }
 
 .orange-text {
@@ -129,8 +130,10 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #494d52;
 }
+
+
 
 .flex-box {
   display: -webkit-flex;
@@ -139,6 +142,8 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+  background-color: #494d52;
+
 }
 
 .flex-column {

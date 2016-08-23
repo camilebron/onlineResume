@@ -111,8 +111,9 @@ function initializeMap() {
         var locations = [];
 
         // adds the single location property from bio to the locations array
-        locations.push(bio.currentLocation);
-
+        bio.bio.forEach(function(bio) {
+          locations.push(bio.contact[0].location);
+        });
         // iterates through school locations and appends each location to
         // the locations array. Note that forEach is used for array iteration
         // as described in the Udacity FEND Style Guide:
