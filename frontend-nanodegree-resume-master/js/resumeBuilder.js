@@ -6,17 +6,17 @@ var bio = {
             "mobile": "787-464-4142",
             "email": "camilebron@gmail.com",
             "github": "camilebron",
-            "location": "Puerto Rico",
-            "twitter": "camileb28"
+            "twitter": "camileb28",
+            "location": "Puerto Rico"
         }],
         "welcomeMessage": "Welcome to my resume! Let's create great things together...",
+        "skills": ["HTML5", "CSS", "JS"],
         "biopic": "images/bioPic.jpg"
-    }],
-    "skills": ["HTML5", "CSS", "JS"]
+    }]
 };
 
 var work = {
-    "job": [{
+    "jobs": [{
         "employer": "Paralle 18",
         "title": "Fellow",
         "location": "San Juan, PR",
@@ -37,14 +37,14 @@ var education = {
         "url": "http://www.paloaltou.edu",
         "location": "Palo Alto, CA",
         "degree": "Masters",
-        "majors": "Psychology",
+        "majors":["Psychology"],
         "dates": "2012 - 2014"
     }, {
         "name": "University of Puerto Rico, Mayaguez Campus",
         "url": "http://www.uprm.edu",
         "location": "Puerto Rico",
         "degree": "BA",
-        "majors": "Psychology",
+        "majors": ["Psychology"],
         "dates": "2008 - 2012"
     }],
     "onlineCourses": [{
@@ -59,12 +59,12 @@ var projects = {
         "title": "Resume-Website",
         "dates": "2016",
         "description": "This is my resume website which has all my information and shows my dev skills!",
-        "images": "http://lorempixel.com/400/200/"
+        "images": ["http://lorempixel.com/400/200/"]
     }, {
         "title": "Another Cool Project",
         "dates": "2016",
         "description": "This is a really cool project that shows all of my super awesome skills!!",
-        "images": "http://lorempixel.com/400/200/"
+        "images": ["http://lorempixel.com/400/200/"]
     }]
 };
 bio.display = function() {
@@ -101,21 +101,21 @@ bio.display();
 
 work.display = function() {
 
-    work.job.forEach(function(job) {
+    work.jobs.forEach(function(jobs) {
 
         $("#workExperience").append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", jobs.employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", jobs.title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
         $(".work-entry:last").append(formattedEmployerTitle);
 
-        var formattedDates = HTMLworkDates.replace("%data%", job.dates);
+        var formattedDates = HTMLworkDates.replace("%data%", jobs.dates);
         $(".work-entry:last").append(formattedDates);
 
-        var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
+        var formattedDescription = HTMLworkDescription.replace("%data%", jobs.description);
         $(".work-entry:last").append(formattedDescription);
 
-        var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
+        var formattedLocation = HTMLworkLocation.replace("%data%", jobs.location);
         $(".work-entry:last").append(formattedLocation);
 
 
