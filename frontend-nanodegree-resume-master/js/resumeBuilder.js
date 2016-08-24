@@ -13,7 +13,7 @@ var bio = {
         "biopic": "images/bioPic.jpg"
     }],
     "skills": ["HTML5", "CSS", "JS"]
-}
+};
 
 var work = {
     "job": [{
@@ -95,7 +95,7 @@ bio.display = function() {
         $("#skills").append(formattedSkills);
     }
 
-}
+};
 
 bio.display();
 
@@ -138,9 +138,9 @@ function inName(name) {
     var lastName = name.slice(name.indexOf(" ") + 1);
     var space = (" ");
 
-    var finalName = firstLetter + firstName.slice(1).toLowerCase() + space + lastName.toUpperCase();
+    var finalIntName = firstLetter + firstName.slice(1).toLowerCase() + space + lastName.toUpperCase();
 
-    return finalName;
+    return finalIntName;
 
 }
 $("#main").append(internationalizeButton);
@@ -194,7 +194,7 @@ education.display = function() {
     for (var i = 0; i < education.onlineCourses.length; i++) {
         $('#education').append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace("#", education.onlineCourses[i].url).replace("%data%", education.onlineCourses[i].title);
-        var formattedOnlineSchool = HTMLonlineSchool.replace ("%data%", education.onlineCourses[i].school);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
         var formattedOnlineURL = HTMLonlineURL.replace("#", education.onlineCourses[i].url).replace("%data%", education.onlineCourses[i].url);
 
