@@ -112,7 +112,7 @@ function initializeMap() {
 
         // adds the single location property from bio to the locations array
         bio.display = function() {
-            locations.push(bio.contact[0].location);
+            locations.push(bio.contacts.location);
         };
         // iterates through school locations and appends each location to
         // the locations array. Note that forEach is used for array iteration
