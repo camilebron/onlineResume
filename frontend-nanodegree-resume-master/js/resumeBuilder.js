@@ -1,18 +1,18 @@
 var bio = {
-    "bio": [{
+    "bio": {
         "name": "Camille Lebrón Brayfield",
         "role": "Front-End-Developer",
-        "contact": [{
+        "contacts": {
             "mobile": "787-464-4142",
             "email": "camilebron@gmail.com",
             "github": "camilebron",
             "twitter": "camileb28",
             "location": "Puerto Rico"
-        }],
+        },
         "welcomeMessage": "Welcome to my resume! Let's create great things together...",
         "skills": ["HTML5", "CSS", "JS"],
         "biopic": "images/bioPic.jpg"
-    }]
+}
 };
 
 var work = {
@@ -67,33 +67,34 @@ var projects = {
         "images": ["http://lorempixel.com/400/200/"]
     }]
 };
+var data = "%data%";
+
 bio.display = function() {
-    bio.bio.forEach(function(bio) {
-        var formattedName = HTMLheaderName.replace("%data%", bio.name);
-        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-        $("#header").prepend(formattedRole);
-        $("#header").prepend(formattedName);
-        var formattedMobile = HTMLmobile.replace('%data%', bio.contact[0].mobile);
-        $('#topContacts').append(formattedMobile);
-        var formattedEmail = HTMLemail.replace("%data%", bio.contact[0].email);
-        $('#topContacts').append(formattedEmail);
-        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact[0].twitter);
-        $('#topContacts').append(formattedTwitter);
-        var formattedGithub = HTMLgithub.replace("%data%", bio.contact[0].github);
-        $('#topContacts').append(formattedGithub);
-        var formattedLocation = HTMLlocation.replace("%data%", bio.contact[0].location);
-        $('#topContacts').append(formattedLocation);
-        var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-        $('#header').append(formattedBioPic);
-        var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-        $('#header').append(formattedWelcomeMsg);
-        $('#footerContacts').append(formattedMobile, formattedEmail, formattedTwitter, formattedGithub, formattedLocation);
-    });
-    $("#header").append(HTMLskillsStart);
-    for (var i = 0; i < bio.skills.length; i++) {
-        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-        $("#skills").append(formattedSkills);
-    }
+  var formattedName = HTMLheaderName.replace(data, bio.bio.name);
+  var formattedRole = HTMLheaderRole.replace(data, bio.bio.role);
+  $("#header").prepend(formattedRole);
+  $("#header").prepend(formattedName);
+  var formattedMobile = HTMLmobile.replace(data, bio.bio.contacts.mobile);
+  $('#topContacts').append(formattedMobile);
+  var formattedEmail = HTMLemail.replace(data, bio.bio.contacts.email);
+  $('#topContacts').append(formattedEmail);
+  var formattedTwitter = HTMLtwitter.replace(data, bio.bio.contacts.twitter);
+  $('#topContacts').append(formattedTwitter);
+  var formattedGithub = HTMLgithub.replace(data, bio.bio.contacts.github);
+  $('#topContacts').append(formattedGithub);
+  var formattedLocation = HTMLlocation.replace(data, bio.bio.contacts.location);
+  $('#topContacts').append(formattedLocation);
+  var formattedBioPic = HTMLbioPic.replace(data, bio.bio.biopic);
+  $('#header').append(formattedBioPic);
+  var formattedWelcomeMsg = HTMLwelcomeMsg.replace(data, bio.bio.welcomeMessage);
+  $('#header').append(formattedWelcomeMsg);
+  $('#footerContacts').append(formattedMobile, formattedEmail, formattedTwitter, formattedGithub, formattedLocation);
+
+  $("#header").append(HTMLskillsStart);
+  for (var i = 0; i < bio.bio.skills.length; i++) {
+      var formattedSkills = HTMLskills.replace(data, bio.bio.skills[i]);
+      $("#skills").append(formattedSkills);
+  }
 
 };
 
